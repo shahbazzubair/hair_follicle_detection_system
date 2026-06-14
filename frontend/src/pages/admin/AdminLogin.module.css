@@ -1,0 +1,76 @@
+.adminWrapper {
+  background: #f0f7ff; /* Soft medical blue instead of dark slate */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginCard {
+  background: #ffffff;
+  padding: 50px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Softer shadow */
+  border: 1px solid #e2e8f0;
+}
+
+.lockIcon { 
+  font-size: 3rem; 
+  margin-bottom: 20px; 
+}
+
+.loginCard h2 { 
+  color: #0f172a; /* Matching your title text color */
+  margin-bottom: 10px; 
+}
+
+.loginCard p { 
+  color: #64748b; 
+  margin-bottom: 30px; 
+  font-size: 0.9rem; 
+}
+
+.form { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 20px; 
+}
+
+.inputGroup input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  outline: none;
+  background: #f8fafc;
+  font-size: 1rem;
+}
+
+.inputGroup input:focus {
+  border-color: #2563eb;
+}
+
+.loginBtn {
+  background: #2563eb; /* Primary blue to match landing page */
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+.loginBtn:hover { 
+  opacity: 0.9; 
+}
+
+.loginBtn:disabled { 
+  background: #94a3b8; 
+  box-shadow: none;
+}

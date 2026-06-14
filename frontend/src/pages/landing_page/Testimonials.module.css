@@ -1,0 +1,164 @@
+/* =========================
+   TESTIMONIAL SECTION
+========================= */
+
+.testimonialSection {
+  padding: 90px 0;
+  /* FIXED: Replaced the dark teal with a soft, clean theme-matching gradient */
+  background: linear-gradient(135deg, #f0f7ff 0%, #dbeafe 100%);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  /* FIXED: Matched exactly to the Hero title color */
+  color: #0f172a; 
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.title span {
+  /* FIXED: Matched exactly to the primary blue used in buttons */
+  color: #2563eb; 
+}
+
+.subtitle {
+  /* FIXED: Matched to the Hero description color */
+  color: #475569; 
+  margin-bottom: 60px;
+  font-size: 1.1rem;
+}
+
+/* =========================
+   SLIDER
+========================= */
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.sliderTrack {
+  display: flex;
+  width: 100%;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.slide {
+  min-width: 100%;
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* Prevents shadow clipping */
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+  width: 100%;
+  max-width: 700px;
+  min-height: 320px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 24px;
+  text-align: left;
+  /* Softened the border to match the light theme */
+  border: 1px solid #e2e8f0; 
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+  animation: lineMove 6s linear infinite;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.quoteIcon {
+  font-size: 4rem;
+  color: #60a5fa;
+  line-height: 0;
+  margin-bottom: 35px;
+  font-family: serif;
+  opacity: 0.3;
+}
+
+.feedback {
+  color: #334155;
+  font-style: italic;
+  margin-bottom: 35px;
+  line-height: 1.9;
+  font-size: 1rem;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #38bdf8;
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.2);
+  flex-shrink: 0;
+}
+
+.name {
+  color: #0f172a;
+  font-weight: 800;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.role {
+  color: #2563eb;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 5px 0 0;
+}
+
+/* =========================
+   ANIMATIONS & RESPONSIVE
+========================= */
+
+@keyframes lineMove {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@media (max-width: 768px) {
+  .title { font-size: 2.2rem; }
+  .card { padding: 25px; min-height: auto; }
+}
