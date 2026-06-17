@@ -50,6 +50,7 @@ async def get_patient_data(username: str):
                 "scanId": str(scan["_id"]),
                 "patientName": scan.get("patientName"),
                 "doctorName": scan.get("doctorName"),
+                "imagePath": scan.get("imagePath"),   # NEW
                 "baldnessStage": scan.get("baldnessStage", "Results Pending"),
                 "date": scan.get("date")
             })

@@ -14,21 +14,28 @@
 }
 
 /* =========================
-   HEADER & NAV
+   HEADER
 ========================= */
+
 .dashboardHeader {
-  position: fixed;
+   position: fixed;   /* change from sticky to fixed */
   top: 0;
   left: 0;
   width: 100%;
+
   z-index: 1000;
+
   height: 90px;
-  background: #a0c9f1;
+
+  background: #a0c9f1;;
   backdrop-filter: blur(12px);
+
   border-bottom: 1px solid #e2e8f0;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   padding: 0 5%;
 }
 
@@ -39,7 +46,9 @@
   color: #0f172a;
 }
 
-.logoText span { color: #2563eb; }
+.logoText span {
+  color: #2563eb;
+}
 
 .headerRight {
   display: flex;
@@ -47,48 +56,81 @@
   gap: 1rem;
 }
 
+/* =========================
+   USER PROFILE
+========================= */
+
 .userProfile {
   display: flex;
   align-items: center;
   gap: 12px;
+
   padding: 8px 14px;
+
   background: white;
+
   border: 1px solid #e2e8f0;
   border-radius: 16px;
+
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
 }
 
 .avatar {
   width: 48px;
   height: 48px;
+
   background: linear-gradient(135deg, #2563eb, #3b82f6);
   color: white;
+
   border-radius: 14px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-size: 1.1rem;
   font-weight: 800;
+
   box-shadow: 0 6px 14px rgba(37, 99, 235, 0.25);
+}
+
+.userMeta {
+  display: flex;
+  flex-direction: column;
 }
 
 .actualName {
   font-size: 1rem;
   font-weight: 700;
   color: #0f172a;
+  line-height: 1.2;
 }
+
+/* =========================
+   LOGOUT BUTTON
+========================= */
 
 .logoutBtn {
   height: 48px;
   min-width: 115px;
+
   border: 1px solid #fecdd3;
   border-radius: 14px;
+
   background: #fff1f2;
   color: #e11d48;
+
   padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-size: 0.95rem;
   font-weight: 700;
+
   cursor: pointer;
+
   transition: all 0.25s ease;
 }
 
@@ -98,13 +140,18 @@
 }
 
 /* =========================
-   MAIN LAYOUT & GRID
+   MAIN CONTENT
 ========================= */
+
 .mainContent {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 120px 5% 3rem;
+
+  padding: 120px 5% 3rem; /* top padding added */
 }
+/* =========================
+   HERO SECTION
+========================= */
 
 .welcomeHero {
   margin-bottom: 2.5rem;
@@ -123,218 +170,172 @@
   font-weight: 500;
 }
 
-/* 3-COLUMN GRID */
-.topGrid {
+/* =========================
+   DASHBOARD GRID
+========================= */
+
+.gridContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.8rem;
   margin-bottom: 3rem;
-  align-items: stretch; /* Forces all cards to equal height */
 }
 
 .dashboardCard {
   background: white;
+
   border-radius: 24px;
   border: 1px solid #e2e8f0;
-  padding: 2rem;
-  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.03);
+
+  padding: 1.8rem;
+
+  box-shadow:
+    0 4px 10px rgba(15, 23, 42, 0.03),
+    0 1px 3px rgba(15, 23, 42, 0.04);
+
   transition: all 0.25s ease;
-  display: flex;
-  flex-direction: column;
+}
+
+.dashboardCard:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 10px 25px rgba(15, 23, 42, 0.06),
+    0 4px 10px rgba(15, 23, 42, 0.04);
 }
 
 .dashboardCard h3 {
   font-size: 1.35rem;
   font-weight: 800;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   color: #0f172a;
 }
 
 .featuredCard {
   border: 2px solid #2563eb;
   background: linear-gradient(to bottom right, #f8fbff, #eef5ff);
-  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.08);
 }
 
 /* =========================
-   DOCTOR LIST STYLES
+   SELECT INPUT
 ========================= */
-.doctorListContainer {
-  flex: 1;
-  max-height: 280px; /* Keeps the box from getting too tall */
-  overflow-y: auto;
-  padding-right: 10px;
-}
 
-.doctorListContainer::-webkit-scrollbar {
-  width: 6px;
-}
-.doctorListContainer::-webkit-scrollbar-thumb {
-  background-color: #cbd5e1;
-  border-radius: 10px;
-}
+.elegantSelect {
+  width: 100%;
 
-.doctorDropdown {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
+  padding: 14px 16px;
 
-.doctorOption {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 12px 14px;
-  background: #ffffff;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 16px;
+  border: 1.5px solid #dbe3ee;
+  border-radius: 12px;
+
+  background: white;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f172a;
+
+  outline: none;
   cursor: pointer;
+
   transition: all 0.25s ease;
 }
 
-.doctorOption:hover {
-  border-color: #93c5fd;
-  transform: translateY(-2px);
-}
-
-.activeDoctorOption {
-  border: 2px solid #2563eb;
-  background: linear-gradient(to right, #f8fbff, #ffffff);
-}
-
-.doctorImageWrapper { flex-shrink: 0; }
-.doctorMiniImage {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #2563eb;
-}
-.defaultMiniAvatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #2563eb, #3b82f6);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  font-weight: 800;
-}
-
-.doctorInfo { flex: 1; min-width: 0; }
-.doctorInfo h4 { font-size: 1rem; font-weight: 800; color: #0f172a; margin-bottom: 2px; }
-.doctorInfo p { font-size: 0.85rem; font-weight: 600; color: #64748b; }
-
-.selectedBadge {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #2563eb;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: 800;
+.elegantSelect:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
 }
 
 /* =========================
    UPLOAD ZONE
 ========================= */
+
 .uploadZone {
-  flex: 1;
   border: 2px dashed #cbd5e1;
   border-radius: 18px;
-  padding: 2rem;
+
+  padding: 2.5rem 2rem;
+
   background: white;
+
   text-align: center;
   cursor: pointer;
+
   transition: all 0.25s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
-.uploadZone:not(.uploadZoneDisabled):hover {
+.uploadZone:hover {
   border-color: #2563eb;
   background: #f8fbff;
 }
 
 .uploadIconLarge {
-  font-size: 3rem;
+  font-size: 2rem;
   display: block;
   margin-bottom: 1rem;
 }
 
 .uploadZone p {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #1e293b;
 }
 
-.uploadZoneDisabled {
-  background: #f1f5f9;
-  border-color: #e2e8f0;
-  color: #94a3b8;
-  cursor: not-allowed;
-  pointer-events: none;
-  opacity: 0.7;
-}
-
-.uploadZoneDisabled p { color: #64748b; }
-
 /* =========================
-   RECENT SCAN (NEW)
+   LATEST RESULT
 ========================= */
-.recentScanWrapper {
-  flex: 1;
+
+.miniReportCard {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 15px;
+  gap: 1rem;
 }
 
-.recentScanImg {
+.miniReportCard p {
+  font-size: 1rem;
+  color: #334155;
+}
+
+.historyBtn {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 14px;
-  border: 1px solid #e2e8f0;
+  height: 48px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
 }
 
-.recentScanInfo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 5px;
+.historyBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(37, 99, 235, 0.2);
 }
 
-.recentScanInfo p {
-  color: #0f172a;
-  font-size: 1rem;
-}
-
-.emptyRecent {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px dashed #cbd5e1;
-  border-radius: 18px;
-  background: #f8fafc;
-  color: #64748b;
+.emptyStateMini {
+  color: #94a3b8;
   font-weight: 600;
-  font-size: 1rem;
 }
 
 /* =========================
-   HISTORY & GALLERY SECTION
+   GALLERY SECTION
 ========================= */
-.gallerySection { margin-top: 2rem; }
-.sectionTitle { font-size: 2rem; font-weight: 800; margin-bottom: 1.8rem; color: #0f172a; }
+
+.gallerySection {
+  margin-top: 1rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1.8rem;
+  color: #0f172a;
+}
 
 .scansGrid {
   display: grid;
@@ -342,18 +343,31 @@
   gap: 24px;
 }
 
+/* =========================
+   SCAN CARD
+========================= */
+
 .scanCard {
   background: white;
+
   border-radius: 22px;
   overflow: hidden;
+
   border: 1px solid #e2e8f0;
+
   transition: all 0.25s ease;
-  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.03);
+
+  box-shadow:
+    0 4px 10px rgba(15, 23, 42, 0.03),
+    0 1px 3px rgba(15, 23, 42, 0.04);
 }
 
 .scanCard:hover {
   transform: translateY(-6px);
-  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
+
+  box-shadow:
+    0 14px 28px rgba(15, 23, 42, 0.08),
+    0 4px 10px rgba(15, 23, 42, 0.05);
 }
 
 .scanImage {
@@ -364,12 +378,196 @@
 
 .scanDetails {
   padding: 1.2rem;
+
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.scanDetails p { font-size: 1rem; color: #0f172a; }
+.scanDetails p {
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.statusBadge {
+  width: fit-content;
+
+  padding: 6px 14px;
+
+  border-radius: 999px;
+
+  background: #dcfce7;
+  color: #166534;
+
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.miniDownloadBtn {
+  margin-top: 6px;
+
+  height: 42px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #0f172a;
+  color: white;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.miniDownloadBtn:hover {
+  background: #2563eb;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.emptyGallery {
+  background: white;
+
+  border: 2px dashed #cbd5e1;
+  border-radius: 20px;
+
+  padding: 3rem;
+
+  text-align: center;
+
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .dashboardHeader {
+    height: auto;
+    padding: 1rem 5%;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .headerRight {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .welcomeHero h2 {
+    font-size: 2rem;
+  }
+
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .scansGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   DOCTOR CARDS
+========================= */
+
+.doctorGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap: 25px;
+}
+
+.doctorCard {
+  background: white;
+  border-radius: 22px;
+  padding: 25px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.doctorCard:hover {
+  transform: translateY(-5px);
+}
+
+.doctorImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid #3b82f6;
+}
+
+.defaultDoctorAvatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.specialityText {
+  color: #475569;
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+.doctorMeta {
+  margin-top: 10px;
+  color: #334155;
+  font-size: 14px;
+}
+
+.scheduleBox {
+  margin-top: 16px;
+  padding: 14px;
+  background: #f8fafc;
+  border-radius: 14px;
+}
+
+.scheduleDays {
+  margin-top: 8px;
+  color: #0f172a;
+  font-size: 14px;
+}
+
+.selectDoctorBtn {
+  margin-top: 20px;
+  width: 100%;
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 14px;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.selectedDoctorBtn {
+  margin-top: 20px;
+  width: 100%;
+  border: none;
+  background: #059669;
+  color: white;
+  padding: 14px;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
 
 .statusProcessed {
   background: #dcfce7;
@@ -378,7 +576,6 @@
   border-radius: 20px;
   width: fit-content;
   font-weight: 700;
-  font-size: 0.85rem;
 }
 
 .statusPending {
@@ -388,58 +585,405 @@
   border-radius: 20px;
   width: fit-content;
   font-weight: 700;
-  font-size: 0.85rem;
 }
+/* =========================
+   DOCTOR DROPDOWN
+========================= */
 
-.miniDownloadBtn {
-  margin-top: 6px;
-  height: 42px;
-  border: none;
-  border-radius: 10px;
-  background: #0f172a;
-  color: white;
-  font-size: 0.9rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.miniDownloadBtn:hover { background: #2563eb; }
-
-.emptyGallery {
-  background: white;
-  border: 2px dashed #cbd5e1;
-  border-radius: 20px;
-  padding: 4rem;
-  text-align: center;
-  color: #64748b;
-  font-weight: 600;
-  font-size: 1.1rem;
+.doctorDropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 22px;
 }
 
 /* =========================
-   RESPONSIVE LAYOUT
+   SINGLE DOCTOR ROW
 ========================= */
-@media (max-width: 1100px) {
-  .topGrid {
-    grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns on tablets */
-  }
+
+.doctorOption {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 16px 18px;
+
+  background: #ffffff;
+
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+
+  position: relative;
+
+  cursor: default;
+
+  transition: all 0.25s ease;
+
+  box-shadow:
+    0 2px 8px rgba(15, 23, 42, 0.03),
+    0 1px 2px rgba(15, 23, 42, 0.04);
 }
 
+.doctorOption:hover {
+  transform: translateY(-3px);
+
+  border-color: #2563eb;
+
+  box-shadow:
+    0 12px 25px rgba(37, 99, 235, 0.08),
+    0 4px 10px rgba(15, 23, 42, 0.04);
+}
+
+/* =========================
+   ACTIVE SELECTED DOCTOR
+========================= */
+
+.activeDoctorOption {
+  border: 2px solid #2563eb;
+  background: linear-gradient(
+    to right,
+    #f8fbff,
+    #ffffff
+  );
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.doctorImageWrapper {
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.doctorMiniImage {
+  width: 68px;
+  height: 68px;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 3px solid #2563eb;
+
+  transition: 0.25s ease;
+}
+
+.doctorMiniImage:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   DEFAULT AVATAR
+========================= */
+
+.defaultMiniAvatar {
+  width: 68px;
+  height: 68px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #3b82f6
+  );
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+  font-weight: 800;
+
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
+}
+
+/* =========================
+   INFO SECTION
+========================= */
+
+.doctorInfo {
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  cursor: pointer;
+}
+
+/* =========================
+   NAME
+========================= */
+
+.doctorInfo h4 {
+  font-size: 1.08rem;
+  font-weight: 800;
+
+  color: #0f172a;
+
+  margin-bottom: 5px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================
+   SPECIALITY
+========================= */
+
+.doctorInfo p {
+  font-size: 0.93rem;
+  font-weight: 600;
+
+  color: #64748b;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================
+   SELECTED CHECK
+========================= */
+
+.selectedBadge {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #3b82f6
+  );
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+  font-weight: 800;
+
+  flex-shrink: 0;
+
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.2);
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
 @media (max-width: 768px) {
-  .topGrid {
-    grid-template-columns: 1fr; /* Switch to 1 column on mobile */
+  .doctorOption {
+    padding: 14px;
+    gap: 14px;
   }
-  .dashboardHeader {
-    height: auto;
-    padding: 1rem 5%;
-    flex-direction: column;
-    gap: 1rem;
+
+  .doctorMiniImage,
+  .defaultMiniAvatar {
+    width: 58px;
+    height: 58px;
   }
-  .headerRight {
-    width: 100%;
-    justify-content: space-between;
+
+  .doctorInfo h4 {
+    font-size: 0.98rem;
   }
-  .welcomeHero h2 { font-size: 2rem; }
-  .scansGrid { grid-template-columns: 1fr; }
+
+  .doctorInfo p {
+    font-size: 0.85rem;
+  }
+
+  .selectedBadge {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+}
+/* =====================================
+   SPECIALIST LAYOUT
+===================================== */
+
+.chooseText {
+  color: #64748b;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.specialistContainer {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+  align-items: start;
+}
+
+.specialistList {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.specialistItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-bottom: 1px solid #eef2f7;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.specialistItem:hover {
+  background: #f8fbff;
+}
+
+.activeSpecialist {
+  border: 2px solid #3b82f6;
+  background: #f8fbff;
+}
+
+.specialistLeft {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.specialistLeft h4 {
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: #111827;
+}
+
+.specialistLeft p {
+  font-size: 13px;
+  color: #2563eb;
+}
+
+.specialistAvatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.arrow {
+  font-size: 22px;
+  color: #94a3b8;
+}
+
+.checkCircle {
+  width: 28px;
+  height: 28px;
+  background: #2563eb;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+/* =====================================
+   DETAILS CARD
+===================================== */
+
+.doctorDetailsCard {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.detailsHeader {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.detailsAvatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #2563eb;
+}
+
+.detailsHeader h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.detailsHeader p {
+  color: #2563eb;
+  font-size: 13px;
+  margin: 4px 0;
+}
+
+.experienceBadge {
+  display: inline-block;
+  background: #eff6ff;
+  color: #2563eb;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.infoBlock {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid #eef2f7;
+}
+
+.infoBlock h4 {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.infoBlock p {
+  font-size: 13px;
+  color: #475569;
+}
+
+.daysRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dayBadge {
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.selectDoctorBtn {
+  margin-top: 20px;
+  width: 100%;
+  height: 46px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .specialistContainer {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,1 +1,1 @@
-# hair_follicle_detection_system
+# hair-follicle-detection-system

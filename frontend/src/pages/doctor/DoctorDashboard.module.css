@@ -540,3 +540,181 @@
     grid-template-columns: 1fr;
   }
 }
+/* ============================= */
+/* PROFILE EDIT SECTION */
+/* ============================= */
+
+.profileModal {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  padding: 30px;
+  margin-bottom: 35px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.profileGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 30px;
+}
+
+.profileInputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profileInputGroup label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.profileInput {
+  width: 100%;
+  height: 52px;
+  border: 1px solid #dbe2ea;
+  border-radius: 14px;
+  padding: 0 16px;
+  font-size: 15px;
+  color: #0f172a;
+  background: #fff;
+  transition: all 0.25s ease;
+}
+
+.profileInput:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
+}
+
+.profileTextarea {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid #dbe2ea;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 15px;
+  resize: none;
+  color: #0f172a;
+  font-family: inherit;
+  background: #fff;
+  transition: all 0.25s ease;
+}
+
+.profileTextarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
+}
+
+/* ============================= */
+/* FILE INPUT */
+/* ============================= */
+
+.profileInput[type="file"] {
+  height: auto;
+  padding: 12px;
+  cursor: pointer;
+}
+
+/* ============================= */
+/* AVAILABILITY */
+/* ============================= */
+
+.scheduleWrapper {
+  margin-top: 10px;
+}
+
+.scheduleTitle {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 18px;
+}
+
+.scheduleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 14px;
+}
+
+.scheduleCard {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 14px;
+  transition: all 0.25s ease;
+}
+
+.scheduleCard:hover {
+  border-color: #38bdf8;
+  background: #f0f9ff;
+}
+
+.scheduleLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #334155;
+}
+
+.scheduleLabel input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #0ea5e9;
+}
+
+/* ============================= */
+/* SAVE BUTTON */
+/* ============================= */
+
+.saveProfileBtn {
+  margin-top: 30px;
+  width: 220px;
+  height: 52px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0ea5e9, #2563eb);
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  transition: all 0.25s ease;
+}
+
+.saveProfileBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 992px) {
+  .profileGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .saveProfileBtn {
+    width: 100%;
+  }
+
+  .scheduleGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .scheduleGrid {
+    grid-template-columns: 1fr;
+  }
+}

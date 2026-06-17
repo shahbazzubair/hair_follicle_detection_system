@@ -30,6 +30,7 @@ export default function DoctorDashboard() {
   const [speciality, setSpeciality] = useState("");
 
   const [contactNumber, setContactNumber] = useState("");
+  const [about, setAbout] = useState("");
 
   const [weeklySchedule, setWeeklySchedule] = useState([]);
   const [profileFile, setProfileFile] = useState(null);
@@ -79,6 +80,7 @@ export default function DoctorDashboard() {
       setSpeciality(doctor.speciality || doctor.specialization || "");
 
       setContactNumber(doctor.contactNumber || doctor.phone || "");
+      setAbout(doctor.about || "");
 
       setWeeklySchedule(doctor.weeklySchedule || []);
     } catch (err) {
@@ -150,6 +152,7 @@ export default function DoctorDashboard() {
         doctorName,
         speciality,
         contactNumber,
+        about,
         weeklySchedule,
         profileImage: uploadedImagePath,
       });
@@ -325,7 +328,6 @@ export default function DoctorDashboard() {
               <h2>Dr. {doctorName}</h2>
 
               <p>{speciality || "Hair Specialist"}</p>
-
               <div className={styles.profileMeta}>
                 <div className={styles.metaItem}>
                   📞 {contactNumber || "Not Added"}
@@ -345,9 +347,10 @@ export default function DoctorDashboard() {
             Edit Profile
           </button>
         </div>
-
+           
         {showProfile && (
           <div className={styles.profileModal}>
+             <h2 className={styles.sectionTitle}>Doctor Profile Settings</h2>
             <div className={styles.profileGrid}>
               <div className={styles.profileInputGroup}>
                 <label>Speciality</label>
@@ -359,7 +362,17 @@ export default function DoctorDashboard() {
                   onChange={(e) => setSpeciality(e.target.value)}
                 />
               </div>
+              <div className={styles.profileInputGroup}>
+  <label>About</label>
 
+  <textarea
+    className={styles.profileTextarea}
+    rows="4"
+    value={about}
+    onChange={(e) => setAbout(e.target.value)}
+    placeholder="Write about your expertise..."
+  />
+</div>
               <div className={styles.profileInputGroup}>
                 <label>Contact Number</label>
 
